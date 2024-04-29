@@ -6,7 +6,7 @@ import Grid from '../components/Grid';
 const Tab = createMaterialTopTabNavigator();
 
 function GridScreen(){
-    const route = useRoute();
+    const route:any = useRoute();
 
     return (
         <Tab.Navigator
@@ -25,10 +25,10 @@ function GridScreen(){
                 }
             })}
         >
-            <Tab.Screen name = "All">{(props)=><Grid {...props} category={route.params?.typeOfProduct} type='all'/>}</Tab.Screen>
-            <Tab.Screen name = "Shoes">{(props)=><Grid {...props} category={route.params?.typeOfProduct} type='shoes'/>}</Tab.Screen>
-            <Tab.Screen name = "Tshirts">{(props)=><Grid {...props} category={route.params?.typeOfProduct} type='tshirts'/>}</Tab.Screen>
-            <Tab.Screen name = "Hoodies">{(props)=><Grid {...props} category={route.params?.typeOfProduct} type='hoodies'/>}</Tab.Screen>
+            <Tab.Screen name = "All">{(props)=><Grid {...props} category={route.params?.typeOfProduct? route.params.typeOfProduct:''} type='all'/>}</Tab.Screen>
+            <Tab.Screen name = "Shoes">{(props)=><Grid {...props} category={route.params?.typeOfProduct? route.params.typeOfProduct:''} type='shoes'/>}</Tab.Screen>
+            <Tab.Screen name = "Tshirts">{(props)=><Grid {...props} category={route.params?.typeOfProduct? route.params.typeOfProduct:''} type='tshirts'/>}</Tab.Screen>
+            <Tab.Screen name = "Hoodies">{(props)=><Grid {...props} category={route.params?.typeOfProduct? route.params.typeOfProduct:''} type='hoodies'/>}</Tab.Screen>
         </Tab.Navigator>
     );
 }

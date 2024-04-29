@@ -1,3 +1,4 @@
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 export type product = {
     id: number,
@@ -8,6 +9,39 @@ export type product = {
     price: number,
     quantity?: number
   }
+
+  
+export type RootStackParamList = {
+    first: undefined;
+    second: { titleOfNext: string }| undefined;
+    third: { typeOfProduct: string } | undefined;
+    fourth: { name: string } | undefined;
+    fifth: undefined;
+};
+
+export type GridScreenProps = NativeStackScreenProps<
+ 
+ RootStackParamList,
+ 
+ "third"
+
+>;
+
+export type CategoryScreenProps = NativeStackScreenProps<
+ 
+ RootStackParamList,
+ 
+ "second"
+
+>;
+
+export type DetailScreenProps = NativeStackScreenProps<
+ 
+ RootStackParamList,
+ 
+ "fourth"
+
+>;
 
 export type GridParamList = {
     navigate: (

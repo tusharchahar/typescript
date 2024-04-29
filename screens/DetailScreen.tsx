@@ -6,7 +6,7 @@ import { CartContext } from '../store/context';
 import { useContextSelector } from 'use-context-selector';
 
 function DetailScreen(){
-    const route = useRoute();
+    const route:any = useRoute();
     const productDetails = completeProductList(route.params?.typeOfProduct).find((product:any) => product.id === route.params?.productId);
     const addToCart = useContextSelector(CartContext, (v) => v.addToCart);
 

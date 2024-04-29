@@ -15,11 +15,12 @@ import DetailScreen from './screens/DetailScreen';
 import HomeScreen from './screens/HomeScreen';
 import * as SplashScreen from 'expo-splash-screen';
 import { CartProvider } from './store/context';
+import { RootStackParamList } from './types/types';
 
 SplashScreen.preventAutoHideAsync();
 setTimeout(SplashScreen.hideAsync, 3000);
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Tab = createMaterialTopTabNavigator();
 
